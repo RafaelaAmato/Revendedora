@@ -49,6 +49,10 @@ public class Funcionario {
         this.salarioBase = salarioBase;
     }
 
+    public double calcularComissao(double totalVendas) {
+        return totalVendas * 0.05; 
+    }
+
     public String getInformacoesFuncionario() {
         return "Código: " + codigo + ", Nome: " + nome + ", CPF: " + cpf + ", Salário Base: " + salarioBase;
     }
