@@ -4,6 +4,8 @@
  */
 package modelo;
 
+import java.util.Date;
+
 public class Cliente {
     private int codigo;
     private String nome;
@@ -52,6 +54,9 @@ public class Cliente {
     public String getInformacoesCliente() {
         return "Código: " + codigo + ", Nome: " + nome + ", CPF: " + cpf + ", Endereço: " + endereco.getDescricao();
     }
+    public void comprarVeiculo(Revendedora revendedora, Veiculo veiculo, double valor) {
+        int codigoCompra = revendedora.getProximoCodigoCompra();
+        Compra compra = new Compra(codigoCompra, new Date(), valor, this, veiculo);
+        revendedora.registrarCompra(compra);
+    }
 }
-
-
